@@ -9,17 +9,17 @@
             <div class="card-body">
                 <form action="/signup" method="POST">
                     <div class="form-group mb-3">
-                        <input type="text" name="name" class="form-control" placeholder="Name">
+                        <input type="text" name="name" class="form-control" placeholder="Ingresa tu nombre" required>
                     </div>
                     <div class="form-group mb-3">
-                        <input type="email" name="email" class="form-control" placeholder="E-mail">
+                        <input type="email" name="email" class="form-control" placeholder="example@gmail.com" required>
                     </div>
                     <div class="form-group mb-3">
-                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <input type="password" name="password" class="form-control" placeholder="Crea tu contraseña" minlength="6" required>
                     </div>
                     <div class="form-group mb-3">
                         <input type="password" name="confirm_password" class="form-control"
-                            placeholder="Confirm Password">
+                            placeholder="Confirmar contraseña" minlength="6" required>
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary form-control">

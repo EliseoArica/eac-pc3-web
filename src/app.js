@@ -4,9 +4,9 @@ const morgan = require('morgan');
 const multer = require('multer');
 const exphbs = require('express-handlebars');
 const Handlebars = require('handlebars');
-const bcrypt = require('bcrypt');
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 const flash = require('connect-flash');
-const session = require('express-session');
+const session = require('cookie-session');
 const passport = require('passport');
 
 // Inicializando
@@ -21,7 +21,7 @@ app.engine('.hbs', exphbs({
     defaultLayout: 'main',
     layoutsDir: path.join(app.get('views'), 'layouts'),
     partialsDir: path.join(app.get('views'), 'partials'),
-    // handlebars: allowInsecurePrototypeAccess(Handlebars),
+    handlebars: allowInsecurePrototypeAccess(Handlebars),
     extname: '.hbs'
 }));
 app.set('view engine', '.hbs');
