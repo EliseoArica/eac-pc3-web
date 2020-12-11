@@ -18,23 +18,23 @@ contactsController.renderContactForm = (req, res) => {
     res.render('contacts/contacts_form'); // views/contacts/contacts_form
 };
 
-contactsController.createNewContact = await (req, res) => {
-    const { name, surname, phone } = req.body;
-    console.log(req.file);
-    const uploadParams = {
-        Bucket: process.env.Bucket,
-        Body: req.file.path
-    };
-    console.log(result);
-    const newPhoto = new Photo({
-        title: title,
-        description: description,
-        imageURL: result.url,
-        public_id: result.public_id
-    });
-    await newPhoto.save();
-    //Eliminar archivo de mi servidor
-    await fs.unlink(req.file.path);
+contactsController.createNewContact = async(req, res) => {
+    // const { name, surname, phone } = req.body;
+    // console.log(req.file);
+    // const uploadParams = {
+    //     Bucket: process.env.Bucket,
+    //     Body: req.file.path
+    // };
+    // console.log(result);
+    // const newPhoto = new Photo({
+    //     title: title,
+    //     description: description,
+    //     imageURL: result.url,
+    //     public_id: result.public_id
+    // });
+    // await newPhoto.save();
+    // //Eliminar archivo de mi servidor
+    // await fs.unlink(req.file.path);
 
     res.redirect('/');
 };
